@@ -28,3 +28,6 @@ Q:how make cpp?
 
 
 A:Enter:g++ milroofs.cpp -o milrootfs
+
+
+note:If you don’t want to make cpp, please go to the release download.
