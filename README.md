@@ -1,6 +1,9 @@
 #illustrate
 This program is very similar to proot, but it is not based on proot, it can mount login and unmount.
 It needs to be mounted using img.
+
+
+
 #question
 Q:How to make img?
 note:Please do not download Linux with a different architecture than yours.
@@ -10,3 +13,5 @@ A:
 3. Enter: mount -o loop {name}.img ./{dir}
 4. Unzip rootfs to ./{dir}
 5. Enter: umount {name}.img
+Q:how make cpp?
+A:Enter:g++ milroofs.cpp =o milrootfs
