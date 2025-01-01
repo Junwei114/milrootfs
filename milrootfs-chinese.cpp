@@ -7,15 +7,12 @@ class MilRootFS {
 public:
     MilRootFS() {}
 
-    // 掛載映像檔作為根檔案系統
     bool mountRootFS(const std::string& imgFile, const std::string& mountPoint) {
         std::cout << "掛載映像檔 " << imgFile << " 到 " << mountPoint << " ..." << std::endl;
         
-        // 使用 mount 命令掛載映像檔
         std::string mountCommand = "sudo mount -o loop " + imgFile + " " + mountPoint;
         int result = system(mountCommand.c_str());
 
-        // 檢查掛載是否成功
         if (result != 0) {
             std::cerr << "掛載映像檔失敗！" << std::endl;
             return false;
@@ -23,24 +20,20 @@ public:
         return true;
     }
 
-    // 登入根檔案系統（這裡模擬進入一個 shell）
     void loginToRootFS(const std::string& mountPoint) {
-        std::cout << "根檔案系統掛載成功，進入登入過程..." << std::endl;
-        
-        // 模擬進入根檔案系統的 shell
+        std::cout << "根檔案系統掛載成功" << std::endl;
+    
+
         std::string chrootCommand = "sudo chroot " + mountPoint + " /bin/bash";
-        system(chrootCommand.c_str());  // 使用 chroot 進入新的根檔案系統並啟動 bash
+        system(chrootCommand.c_str());  
     }
 
-    // 卸載根檔案系統
     bool unmountRootFS(const std::string& mountPoint) {
         std::cout << "卸載根檔案系統 " << mountPoint << " ..." << std::endl;
 
-        // 使用 umount 命令卸載掛載點
         std::string unmountCommand = "sudo umount " + mountPoint;
         int result = system(unmountCommand.c_str());
 
-        // 檢查卸載是否成功
         if (result != 0) {
             std::cerr << "卸載根檔案系統失敗！" << std::endl;
             return false;
@@ -48,7 +41,6 @@ public:
         return true;
     }
 
-    // 顯示幫助訊息
     void showHelp() {
         std::cout << "使用方法：" << std::endl;
         std::cout << "milrootfs mount <imgFile> <mountPoint> - 掛載映像檔到指定目錄" << std::endl;
