@@ -6,8 +6,14 @@ It needs to be mounted using img.
 
 #question
 Q:How to make img?
+
+
 note:Please do not download Linux with a different architecture than yours.
+
+
 A:
+
+
 1. Download the rootfs you want
 2. Enter: sudo dd if=/dev/zero of={name}.img bs=1M count={count}M status=progress
 3. Enter: mount -o loop {name}.img ./{dir}
