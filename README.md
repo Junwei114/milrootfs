@@ -31,3 +31,4 @@ A:Enter:g++ milroofs.cpp -o milrootfs
 
 
 note:If you don’t want to make cpp, please go to the release download.
+note:release arch is x86_64,sorry.
