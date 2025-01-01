@@ -13,5 +13,8 @@ A:
 3. Enter: mount -o loop {name}.img ./{dir}
 4. Unzip rootfs to ./{dir}
 5. Enter: umount {name}.img
+
+
+
 Q:how make cpp?
 A:Enter:g++ milroofs.cpp =o milrootfs
