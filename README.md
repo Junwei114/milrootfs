@@ -17,4 +17,6 @@ A:
 
 
 Q:how make cpp?
+
+
 A:Enter:g++ milroofs.cpp =o milrootfs
